@@ -1,19 +1,35 @@
-import Img from '../assets/logo.png';
+import Logo from '~/assets/Logo';
+import Navigation, { type NavItem } from './navigation/NavigationBar';
+import Button from './base/Button';
+import { theme } from '~/types/theme';
 
 export default function Header(): JSX.Element {
+  const menuItems: NavItem[] = [
+    { id: 0, name: 'Teams', path: '/api/teams' },
+    { id: 1, name: 'Sites', path: '/api/sites' },
+    { id: 2, name: 'Users', path: '/api/users' },
+  ];
+
   return (
     <>
-      <div className="w-full flex justify-between items-end p-10 bg-white shadow-md">
-        <div className="flex gap-12 items-end">
+      <div className="w-full bg-white shadow-md">
+        <div
+          id="navigation"
+          className="bg-slate-800 text-white p-1 px-12 flex items-center justify-between"
+        >
           <div>
-            <img src={Img} alt="Logo" className="w-20" />
+            <a href="/" className="flex gap-3 items-center">
+              <Logo color="#ffffff" size={32} />
+              <span className="text-lg">Havanna</span>
+            </a>
           </div>
-          <div>
-            <div>BreadCrumbs to Implement</div>
-            <div>Current Directory</div>
+          <Navigation items={menuItems}></Navigation>
+          <div className="flex gap-4">
+            <Button theme={theme.PRIMARY} text="Sign Up"></Button>
+            <Button theme={theme.SECONDARY} text="Login"></Button>
           </div>
         </div>
-        <div>Search Field | Profile |Sign In | Settings |</div>
+        <div className="py-6 px-12">Test</div>
       </div>
     </>
   );
