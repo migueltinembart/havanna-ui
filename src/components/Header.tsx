@@ -3,7 +3,7 @@ import Img from '../assets/logo.png';
 export default function Header(): JSX.Element {
   return (
     <>
-      <div className="w-full flex justify-between items-end px-8">
+      <div className="w-full flex justify-between items-end p-10 bg-white shadow-md">
         <div className="flex gap-12 items-end">
           <div>
             <img src={Img} alt="Logo" className="w-20" />

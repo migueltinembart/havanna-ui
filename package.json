@@ -1,8 +1,11 @@
 {
-  "name": "frontend",
+  "name": "havanna-ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/**"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
