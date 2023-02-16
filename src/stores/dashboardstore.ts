@@ -1,8 +1,14 @@
 import { create } from 'zustand';
 import produce from 'immer';
-import { type dashboardItemOption } from '~/components/widgets/DashboardItem';
 import { v4 as uuidv4 } from 'uuid';
 
+interface dashboardItemOption {
+  id: string;
+  amount: number;
+  title: string;
+  URL?: string;
+  close?: () => void;
+}
 interface DashboardStore {
   quantity: number;
   title: string;
@@ -35,7 +41,7 @@ const useStore = create<DashboardStore>((set) => ({
     set((state) =>
       produce(state, (draft) => {
         draft.items.push({
-          id: draft.items.length.toString(),
+          id: uuidv4(),
           amount: draft.quantity,
           title: draft.title,
         });
