@@ -1,4 +1,4 @@
-import NavItem from './navigation/NavItem';
+import NavItem from './navigation/NavigationBar';
 
 export default function Sidebar(): JSX.Element {
   return (
