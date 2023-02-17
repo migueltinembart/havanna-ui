@@ -1,11 +1,11 @@
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import Menu from './components/Menu/Menu';
 import Profile from './components/Profile/Profile';
 
 // https://chakra-ui.com/docs/styled-system/style-props
 function App(): JSX.Element {
   return (
-    <div className="bg-orange-100">
+    <Box bg="#fbf7f4">
       <Grid
         templateAreas={`"Menu main Profile"
         `}
@@ -26,7 +26,7 @@ function App(): JSX.Element {
           <Profile></Profile>
         </GridItem>
       </Grid>
-    </div>
+    </Box>
   );
 }
 
